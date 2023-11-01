@@ -12,7 +12,7 @@ main()
 	scanf("%d",&m);
 	total=p+c+m;
 	avg=total/3;
-	if((p>=50&& c>=50 && m>=50) || avg>=50)
+	if((p>=50&& c>=50 && m>=50) || avg>=60)
 	{
 		printf("Result PASS...");
 		
