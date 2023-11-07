@@ -25,10 +25,10 @@ int main()
 		if(v2==0)
 		printf("Welcom");
 		else
-		printf("bhgg");
+		printf("bhgg..");
 	}
 	else
-	printf("bhurrr");
+	printf("bhurrr...");
 	getch();
 	return 0;
 	
