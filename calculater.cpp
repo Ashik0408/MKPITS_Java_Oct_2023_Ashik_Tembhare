@@ -1,9 +1,10 @@
 #include<stdio.h>
 #include<conio.h>
 
-main()
+int main()
 {
-	int total=0,a,b,ch;
+	int total=0,a,b;
+	int c;
 	
 	printf("Enter two No.\n \n");
 	printf("Enter 1st No. :- ");
@@ -12,20 +13,20 @@ main()
 	scanf("%d",&b);
 	printf("1>Addition \n 2>Substraction \n 3> Multiplication \n 4>Division \n");
 	printf("Enter your choice :-");
-	scanf("%d",&ch);
+	scanf("%d",&c);
 	
-	switch(ch)
+	switch(c)
 	{
-		case 1:
+		case 1 :
 			total=a+b;
 			break;
-		case 2:
+		case 2 :
 			total=a-b;
 			break;
-		case 3:
+		case 3 :
 			total=a*b;
 			break;
-		case 4:
+		case 4 :
 			total=a/b;
 			break;
 		default:
@@ -33,6 +34,7 @@ main()
 			
 	}
 	printf("Your answer is  :- %d",total);
-	getch();
+//	getch();
+	return 0;
 	
 }
