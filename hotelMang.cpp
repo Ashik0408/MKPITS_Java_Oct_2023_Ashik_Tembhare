@@ -9,6 +9,8 @@ int main()
 	printf("Welcome to >>>>>>>\n");
 //	printf("Do you want to Book Room :- y/n \n");
 	
+	printf("")
+	
 	total =menu();
 	printf("Total :-%d",&total);
 }

@@ -4,7 +4,7 @@
 int main()
 {
 	char bookRoom,orderContinue;
-	int i,count=1,orderNo,qty,rate,teaTotal;
+	int i=1,count=1,orderNo,qty,rate,teaTotal;
 	
 	printf("Welcome to >>>>>>>\n");
 	printf("Do you want to Book Room :- y/n \n");
@@ -14,7 +14,7 @@ int main()
 		printf("Please Collect Your keys from Reception \n");
 		printf("Welcome To Shri Hotel....Your Room has been Booked \n");
 		
-		for(i=1;count>=i;i++)
+		while(count>=i)
 		{
 			printf("Food Menu \n 1.Tea \n 2.Coffee \n 3.Samosa \n 4.Maharastrian Thali \n");
 			scanf("%d",&orderNo);
@@ -29,9 +29,10 @@ int main()
 			}
 			printf("Do you want to continue your order :y/n \n");
 			scanf("%c",&orderContinue);
+			
 			if(orderContinue=='y')
 			{
-				count=count+1;
+				i=count+1;
 			}
 			
 			
