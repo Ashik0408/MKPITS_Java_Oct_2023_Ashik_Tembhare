@@ -1,3 +1,6 @@
 [submodule "CoreJava_Ashik_Tembhare"]
 	path = CoreJava_Ashik_Tembhare
 	url = https://github.com/Ashik0408/CoreJava_Ashik_Tembhare.git
+[submodule "MKPITS_HTML_Ashikkumar_Tembhare"]
+	path = MKPITS_HTML_Ashikkumar_Tembhare
+	url = https://github.com/Ashik0408/MKPITS_HTML_Ashikkumar_Tembhare.git
