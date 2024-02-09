@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>useMap Attribute</title>
+  </head>
+  <body>
+    <h1>usemap Attribute</h1>
+    <img src="logog.jpg" alt="error" usemap="#map" />
+    <map name="map" id="map">
+      <area
+        shape="rect"
+        coords="0,0,185,105"
+        href="https://www.geeksforgeeks.org"
+        alt="not reacheable"
+      />
+      <area
+        shape="poly"
+        coords="45,25,300,458"
+        href="https://www.w3schools.com/"
+        alt="not reacheable"
+      />
+    </map>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+.backgroundclip {
+  border: dashed;
+  padding: 2%;
+  background-image: url(/Images/cat.jpg);
+  background-repeat: repeat-x;
+  background-clip: content-box;
+}

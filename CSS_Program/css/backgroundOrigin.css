@@ -1,0 +1,8 @@
+img {
+  border: 10px dashed;
+  /* padding: 20px; */
+  /* background: center cover no-repeat; */
+  /* background-origin: border-box; */
+  background-origin: content-box, padding-box;
+  /* background-origin: padding-box; */
+}

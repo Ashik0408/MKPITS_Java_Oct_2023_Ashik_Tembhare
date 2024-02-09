@@ -1,0 +1,8 @@
+* {
+  background-color: transparent;
+  background-image: url(/Images/dog.jpg);
+  /* background-repeat: repeat-x; */
+  /* background-repeat: repeat-y; */
+  background-repeat: no-repeat;
+  background-position: center;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Apply On HTML Element</title>
+    <!-- Internal  CSS-->
+    <style type="text/css">
+      fieldset {
+        color: #00ff0d;
+        border: 1px solid;
+        border-width: 4px;
+        width: 400px;
+        text-align: center;
+        margin: auto;
+      }
+      #submitbutton {
+        align-items: center;
+        background-origin: padding-box;
+      }
+      input {
+        color: rgb(93, 0, 255);
+      }
+      #form {
+        align-items: center;
+        align-content: space-around;
+        text-align: center;
+        border: 1px solid;
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#" id="form">
+      <fieldset>
+        <legend style="text-align: center; font-weight: bolder">Form-1</legend>
+        <label for="name">Name :</label>
+        <input type="text" id="name" name="name" /><br /><br />
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" /><br /><br />
+        <input type="submit" value="Submit" id="submitbutton" />
+      </fieldset>
+    </form>
+  </body>
+</html>
