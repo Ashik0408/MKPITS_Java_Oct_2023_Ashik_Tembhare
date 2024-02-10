@@ -1,0 +1,7 @@
+h1 {
+  background-color: antiquewhite;
+  text-align: center;
+  text-decoration: underline dashed blue;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px rgb(244, 106, 15);
+}
