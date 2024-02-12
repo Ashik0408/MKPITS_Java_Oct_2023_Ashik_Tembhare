@@ -1,0 +1,20 @@
+table,
+th,
+tr td {
+  border: 2px solid yellowgreen;
+  border-collapse: separate;
+  /* border-spacing: 10px 20px; */
+  empty-cells: hide;
+  width: 600px;
+  height: 10px;
+}
+caption {
+  font-size: larger;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(0, 255, 26);
+  text-decoration: underline;
+  text-align: start;
+  text-transform: uppercase;
+  text-shadow: 2px 2px rgb(250, 179, 48);
+}
