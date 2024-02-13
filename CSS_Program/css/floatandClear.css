@@ -1,0 +1,22 @@
+#img1 {
+  margin-left: 75%;
+  position: fixed;
+  height: 400px;
+  width: 400px;
+  float: right;
+}
+#img2 {
+  height: 400px;
+  width: 300px;
+  float: left;
+}
+p {
+  padding-top: 10px;
+  clear: both;
+}
+h1 {
+  margin-left: 40%;
+  position: fixed;
+  text-align: center;
+  padding-top: 10%;
+}

@@ -1,0 +1,18 @@
+#container {
+  position: relative;
+  border: 2px dashed red;
+}
+.div {
+  border: 1px solid black;
+  display: inline-block;
+  height: 150px;
+  width: 33%;
+  overflow: auto;
+  margin-top: 5px;
+}
+#container h1 {
+  background-color: aqua;
+  text-align: center;
+  font-weight: 100;
+  margin: 0;
+}

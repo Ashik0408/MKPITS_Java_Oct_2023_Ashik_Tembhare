@@ -1,35 +1,24 @@
-/* .container {
+.container {
+  /* display: inline-block; */
+  border: 0.5px double;
+  text-align: end;
+  background-color: rgb(244, 239, 239);
   width: 100%;
-  overflow: auto;
-  background-color: black;
-  color: aliceblue;
+
+  position: fixed;
 }
 .container > div {
-  width: 33%;
-  float: left;
-} */
-/* .container { */
-display: flex;
-background: fixed;
-background-color: black;
-text-align: end;
-color: aliceblue;
-/* float: right; */
-/* } */
-/* .container > div { */
-padding: 10px;
-text-align: right;
-display: inline-flex;
-
-width: 33%;
-padding-left: 20%;
-margin-left: px;
-/* } */
-.container {
-  /* width: 500px; */
-  display: flex;
-  justify-content: flex-end;
-}
-.item {
   display: inline-block;
+  padding-right: 10px;
+  font-size: large;
+  color: rgb(0, 3, 5);
+  margin-right: 10px;
+}
+
+.container img {
+  float: left;
+  padding-left: 3px;
+}
+* {
+  margin: 0;
 }

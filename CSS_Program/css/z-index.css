@@ -1,0 +1,27 @@
+.wrapper {
+  position: relative;
+}
+.dashed {
+  margin-top: 2em;
+  height: 101px;
+  width: 100%;
+  border: dashed;
+}
+.gold {
+  position: absolute;
+  z-index: 1;
+  top: 2em;
+  width: 85%;
+  left: 15px;
+  background-color: gold;
+}
+
+.green {
+  position: absolute;
+  background: lightgreen;
+  width: 20%;
+  left: 65%;
+  top: -25px;
+  height: 7em;
+  opacity: 0.9;
+}
