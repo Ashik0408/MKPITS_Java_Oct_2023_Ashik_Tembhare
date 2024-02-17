@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fliphkart</title>
+    <style>
+      *
+      {
+        margin: 0;
+      }
+      body {
+        /* margin: 0; */
+        background-color: rgb(234, 234, 247);
+      }
+      #header {
+        
+        height: auto;
+        width: auto;
+        /* position:fixed; */
+        display: flex;
+        background-color: white;
+      }
+      #logo_search {
+        
+        display: flex;
+        background-color: white;
+        /* justify-content: center; */
+        align-items: center;
+        
+      }
+      .main-logo {
+        /* border: 1px solid black; */
+      }
+      .main-logo img {
+        margin-left: 80px;
+        margin-right: 10px;
+        height: 60px;
+        width: 100;
+      }
+      .search-box {
+        /* border: 1px solid black; */
+        border-radius: 10px;
+        background-color: rgb(234, 234, 247);
+        margin-left: 20px;
+        display: flex;
+      }
+      .search-box img {
+        margin-top: 5px;
+        margin-left: 5px;
+        height: 24px;
+        width: 24px;
+      }
+      .search-input input {
+        height: 35px;
+        width: 730px;
+        background: none;
+        border: none;
+        border-radius: 10px;
+      }
+      #tabs {
+        display: flex;
+        background-color: white;
+        align-items: center;
+        margin-left: 50px;
+      }
+      #tabs img {
+        height: 24px;
+        width: 24px;
+        margin-right: 8px;
+      }
+      #tabs span {
+        font-size: 15px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+        /* margin-top: 100px; */
+        /* text-align: justify; */
+      }
+      .admin,
+      .cart,
+      .store {
+        /* border: 1px solid black; */
+        border-radius: 5px;
+        margin-bottom: 11px;
+        margin-left: 20px;
+      }
+      .dots {
+        align-items: center;
+        margin-left: 70px;
+        padding-left: 8px;
+      }
+      .chevron {
+        margin-left: 7px;
+      }
+      #panal2 {
+        /* border: 1px solid black; */
+        height: 141px;
+        width: 98%;
+        margin-top: 20px;
+        margin-left: 15px;
+        /* margin-right: 1px; */
+        background-color: white;
+        display: flex;
+      }
+      #panal2 .tab {
+        /* border: 1px solid black; */
+        margin: 10px;
+        height: 100px;
+        width: 150px;
+      }
+      #panal2 img {
+        padding-left: 30px;
+        align-items: center;
+      }
+      #panal2 > .tab > .caption {
+        align-items: center;
+        justify-content: center;
+        padding-left: 40px;
+        margin-bottom: 50px;
+      }
+      .admin:hover {
+        background-color: blue;
+      }
+      .dots:hover {
+        border: 0.5px solid black;
+        border-radius: 6px;
+        background-color: beige;
+      }
+      .admin:hover > .chevron {
+        rotate: -180deg;
+      }
+      #panal2 img:hover
+      {
+        transform: scale(1.5);
+      }
+      #slider-images
+      {
+        height: 225px;
+        width: 98%;
+        margin-top: 20px;
+        margin-left: 10px;
+        /* justify-content:center; */
+        /* justify-items: ; */
+        display: flex;
+        overflow: hidden;
+        border: 1px solid black;
+      }
+      
+      .slider-img
+      {
+        display: flex;
+        /* overflow: hiddenn ; */
+
+      }
+      #slider-images>.slider-img img
+      {
+        height: 230px;
+        width: 1500px;
+        /* padding-inline-start: 0px; */
+        /* padding-inline-end: 10px; */
+        /* margin-left: 30px; */
+        /* margin-right: 30px;   */
+        animation: slider 10s  infinite;
+        animation-play-state: running;
+        animation-delay: 0;
+        
+      }
+      @keyframes slider {
+        25%
+        {
+          transform: translateX(0%);
+        }
+        50%
+        {
+          transform: translateX(-100%);
+        }
+        75%
+        {
+          transform: translateX(-200%);
+        }
+        100%
+        {
+          transform: translateX(-300%);
+        }
+        
+      }
+
+      .electonic-head-logo
+      {
+        /* border: 1px solid black; */
+        margin-top: 19px;
+        /* margin: 10px; */
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      .electonic-head-logo h3
+      {
+        /* font-family:Arial, Helvetica, sans-serif ; */
+        margin-left: 20px;
+        margin-top: 25px;
+        /* padding-top: 10px; */
+        display: flex;
+      }
+      /* .electonic-head-logo h3 img{
+        margin-left: 77em;
+        height: 24px;
+        width: 24px;
+      } */
+      .electonic-head-logo h3 div
+      {
+        display: flex;
+        margin-left: 68em;
+      }
+      .electonic-head-logo h3 div img{
+        height: 24px;
+        width: 24px;
+        
+      }
+      #electeronics-block .elec-items{
+
+        display: flex;
+        width: 146px;
+        height: 140px;
+        /* align-items: center; */
+
+      }
+      /* .elec-items div img{
+        height: 110px;
+        width: 110px;
+      } */
+      .elec-items
+      {
+        /* border: 1px solid red; */
+        height: 150px;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: flex;
+      }
+      .elec-items div{
+        border: 0.5px solid rgb(66, 65, 65);
+        border-radius: 8px;
+        height: 135px;
+        margin-left: 50px;
+        margin-top: 5px;
+        align-items: center;
+        
+ 
+      }
+      .elec-items div img{
+        /* border: 1px solid red; */
+        border-radius: 8px;
+        height: 100%;
+        
+      }
+      .item1 figcaption
+      {
+        margin-left: 60px;
+        margin-top: 2px;
+      }
+      #electronics
+      {
+        display: block;
+        /* border: 1px solid blue; */
+        height: 250px;
+        overflow: visible;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 18px;
+        /* padding: 0; */
+        background-color: white;
+      }
+      .elec-items div:hover
+      {
+        transform: scale(1.5);
+      }
+
+      
+
+    </style>
+  </head>
+  <body>
+    <!-- header -->
+    <div id="header">
+      <div id="logo_search">
+        <div class="main-logo">
+          <img src="Images/Flipkart_logo.png" alt="" />
+        </div>
+        <div class="search-box">
+          <div class="search-logo">
+            <img src="Images/search-logo.png" alt="" />
+          </div>
+          <div class="search-input"><input type="search" /></div>
+        </div>
+      </div>
+      <div id="tabs">
+        <div class="admin">
+          <img src="Images/profile-52e0dc.svg" class="profile" alt="" /><span
+            >Login</span
+          ><img src="Images/chevron-30.png" class="chevron" alt="" />
+        </div>
+        <div class="cart">
+          <img src="Images/cart-50.png" alt="" /><span>Cart</span>
+        </div>
+        <div class="store">
+          <img src="Images/store-50.png" alt="" /><span>Become Seller</span>
+        </div>
+        <div class="dots"><img src="Images/three-dots-24.png" alt="" /></div>
+      </div>
+    </div>
+
+    <!-- items-panal -->
+    <div id="panal2">
+      <div class="tab">
+        <img src="Images/groceries.webp" alt="" />
+        <div class="caption">Grocery</div>
+      </div>
+      <div class="tab">
+        <img src="Images/mobile.webp" alt="" />
+        <div class="caption">Mobile</div>
+      </div>
+      <div class="tab">
+        <img src="Images/fasion.webp" alt="" />
+        <div class="caption">Fashion</div>
+      </div>
+      <div class="tab">
+        <img src="Images/electronics.webp" alt="" />
+        <div class="caption">Electronics</div>
+      </div>
+      <div class="tab">
+        <img src="Images/home-furni.webp" alt="" />
+        <div class="caption">Home & Furniture</div>
+      </div>
+      <div class="tab">
+        <img src="Images/applinces.webp" alt="" />
+        <div class="caption">Appliances</div>
+      </div>
+      <div class="tab">
+        <img src="Images/travel.webp" alt="" />
+        <div class="caption">Travel</div>
+      </div>
+      <div class="tab">
+        <img src="Images/beuty-toy-more.webp" alt="" />
+        <div class="caption">Beauty, Toy & More</div>
+      </div>
+      <div class="tab">
+        <img src="Images/two-wheeler.webp" alt="" />
+        <div class="caption">Two Wheelers</div>
+      </div>
+    </div>
+    <!-- slider start -->
+    <div id="slider-images">
+      <div class="slider-img">
+        <img src="Images/iron-man-tony-stark-ouqxo5w2b59h0042.jpg" alt="">
+        <img src="Images/thor-desktop-hd-black-5mjwntdzvucdvcs0.jpg" alt="">
+        <img src="Images/captain-america-in-the-dark-5bulmi837vfjsgrh.jpg" alt="">
+        <img src="Images/1000_F_247247030_yeF7DvWohGyta7yEaIKwGTB1YwziKXr9.jpg" alt="">
+      </div>
+    </div>
+    <!-- best electronics section -->
+    <div id="electronics">
+      <div class="electonic-head-logo">
+        <h3><span>Best Of Electronics</span><div><img src="Images/icons8-arrow-16.png" alt=""></div></h3>
+      </div>
+      <div class="elec-items">
+        <div class="item1"><img src="Images/projector1.webp" alt=""><figcaption>Projector</figcaption></div>
+        <div class="item2"><img src="Images/powerbank.jpg" alt=""><figcaption style="margin-left: 60px; margin-top: 2px;">Powerbank</figcaption></div>
+        <div class="item3"><img src="Images/monitor.jpg" alt=""><figcaption style="margin-left: 60px; margin-top: 2px;">Monitor</figcaption></div>
+        <div class="item4"><img src="Images/trimmer.jpg" alt=""><figcaption style="margin-left: 50px; margin-top: 2px;">Trimmer</figcaption></div>
+        <div class="item5"><img src="Images/keyboard.jpg" alt=""><figcaption style="margin-left: 100px; margin-top: 2px;">Keybord</figcaption></div>
+        <div class="item6"><img src="Images/powerbank.jpg" alt=""><figcaption style="margin-left: 60px; margin-top: 2px;">Powerbank</figcaption></div>
+    </div>
+    </div>
+    <div id="electronics">
+      <div class="electonic-head-logo">
+        <h3><span>Best Of Electronics</span><div><img src="Images/icons8-arrow-16.png" alt=""></div></h3>
+      </div>
+      <div class="elec-items">
+        <div class="item1"><img src="Images/projector1.webp" alt=""><figcaption>Projector</figcaption></div>
+        <div class="item2"><img src="Images/powerbank.jpg" alt=""><figcaption style="margin-left: 60px; margin-top: 2px;">Powerbank</figcaption></div>
+        <div class="item3"><img src="Images/monitor.jpg" alt=""><figcaption style="margin-left: 60px; margin-top: 2px;">Monitor</figcaption></div>
+        <div class="item4"><img src="Images/trimmer.jpg" alt=""><figcaption style="margin-left: 50px; margin-top: 2px;">Trimmer</figcaption></div>
+        <div class="item5"><img src="Images/keyboard.jpg" alt=""><figcaption style="margin-left: 100px; margin-top: 2px;">Keybord</figcaption></div>
+        <div class="item6"><img src="Images/powerbank.jpg" alt=""><figcaption style="margin-left: 60px; margin-top: 2px;">Powerbank</figcaption></div>
+    </div>
+    </div>
+    
+    
+    </div>
+  </body>
+</html>
