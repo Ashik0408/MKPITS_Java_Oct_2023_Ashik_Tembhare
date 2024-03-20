@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tree</title>
+  </head>
+  <body>
+    <h1 id="myid">
+      <!-- This is Comment -->
+      <span>We are Learning JS</span>
+    </h1>
+    <p id="id1">I am Paragraph</p>
+    <p id="id2">
+      <span>span 1</span>
+      <span>span 2</span>
+      <span>span 3</span>
+      I am Paragraph
+    </p>
+    <script>
+      let result = document.getElementById("id2");
+      let cnlen = result.childNodes.length; //5
+      let clen = result.children.length; //1
+      // It includes text node, comment node and any whitespace - space, tab, enter etc
+      console.log(result.childNodes);
+      // console.log(cnlen);
+
+      // It ignores text node, comment node and any whitespace
+      console.log(result.children);
+      // console.log(clen);
+    </script>
+  </body>
+</html>
