@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 5000px;
+      }
+      button {
+        position: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The scrollBy() Method</h2>
+
+    <p>Click to scroll the document.</p>
+
+    <p>Look at the horizontal scrollbar to see the effect.</p>
+
+    <button onclick="scrollWin()">Scroll 100px horizontally!</button>
+    <br /><br />
+
+    <script>
+      function scrollWin() {
+        window.scrollBy(100, 0);
+      }
+    </script>
+  </body>
+</html>
