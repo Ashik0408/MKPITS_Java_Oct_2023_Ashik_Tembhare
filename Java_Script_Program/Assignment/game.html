@@ -1,0 +1,153 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Number Grid</title>
+  </head>
+  <body>
+    <table>
+      <tbody id="number-grid"></tbody>
+    </table>
+    <button onclick="generateRandomGrid()">Generate Random Grid</button>
+
+    <script>
+      function generateRandomGrid() {
+        // Create an empty array to store the random numbers (ensures no duplicates)
+        const randomNumbers = [];
+
+        // Generate random numbers until we have 25 unique ones
+        while (randomNumbers.length < 25) {
+          const number = Math.floor(Math.random() * 25) + 1;
+          if (!randomNumbers.includes(number)) {
+            randomNumbers.push(number);
+          }
+        }
+
+        // Get a reference to the table body element
+        const tableBody = document.getElementById("number-grid");
+
+        // Clear any existing content
+        tableBody.innerHTML = "";
+
+        // Create the grid rows and cells
+        for (let i = 0; i < 5; i++) {
+          const tableRow = document.createElement("tr");
+
+          for (let j = 0; j < 5; j++) {
+            const cell = document.createElement("td");
+            const numberIndex = i * 5 + j; // Calculate index for random number
+            cell.textContent = randomNumbers[numberIndex];
+            tableRow.appendChild(cell);
+          }
+
+          tableBody.appendChild(tableRow);
+        }
+      }
+    </script>
+  </body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Number Grid in Div</title>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* Set 5 columns of equal size */
+        grid-gap: 5px; /* Add spacing between grid items */
+      }
+      .grid-item {
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container" id="number-grid"></div>
+    <button onclick="generateRandomGrid()">Generate Random Grid</button>
+
+    <script>
+      function generateRandomGrid() {
+        // Generate 25 random numbers between 1 and 25 (modify logic if needed)
+        const randomNumbers = [];
+        while (randomNumbers.length < 25) {
+          const number = Math.floor(Math.random() * 25) + 1;
+          if (!randomNumbers.includes(number)) {
+            randomNumbers.push(number);
+          }
+        }
+
+        // Get a reference to the grid container element
+        const gridContainer = document.getElementById("number-grid");
+
+        // Clear any existing content
+        gridContainer.innerHTML = "";
+
+        // Create grid items and add numbers
+        for (let number of randomNumbers) {
+          const gridItem = document.createElement("div");
+          gridItem.classList.add("grid-item"); // Add CSS class for styling
+          gridItem.textContent = number;
+          gridContainer.appendChild(gridItem);
+        }
+      }
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Number Grid in Div (Styled)</title>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 5px;
+        background-color: #f5f5f5; /* Light gray background */
+      }
+      .grid-item {
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px; /* Rounded corners for a softer look */
+        font-weight: bold; /* Bold text for emphasis */
+        cursor: default; /* Remove default pointer on hover */
+      }
+      .grid-item:hover {
+        background-color: #e0e0e0; /* Subtle hover effect */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container" id="number-grid"></div>
+    <button onclick="generateRandomGrid()">Generate Random Grid</button>
+
+    <script>
+      function generateRandomGrid() {
+        // Generate 25 random numbers between 1 and 25 (modify logic if needed)
+        const randomNumbers = [];
+        while (randomNumbers.length < 25) {
+          const number = Math.floor(Math.random() * 25) + 1;
+          if (!randomNumbers.includes(number)) {
+            randomNumbers.push(number);
+          }
+        }
+
+        // Get a reference to the grid container element
+        const gridContainer = document.getElementById("number-grid");
+
+        // Clear any existing content
+        gridContainer.innerHTML = "";
+
+        // Create grid items and add numbers
+        for (let number of randomNumbers) {
+          const gridItem = document.createElement("div");
+          gridItem.classList.add("grid-item");
+          gridItem.textContent = number;
+          gridContainer.appendChild(gridItem);
+        }
+      }
+    </script>
+  </body>
+</html>

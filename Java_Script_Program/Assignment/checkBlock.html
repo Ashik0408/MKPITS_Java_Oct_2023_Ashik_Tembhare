@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+
+    <!-- <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1px;
+        background-color: #272c30;
+        padding: 10px;
+        width: 500px;
+        margin-left: 500px;
+        margin-top: 150px;
+      }
+      #container > div {
+        background-color: rgba(255, 255, 255, 0.993);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+      }
+
+      #info {
+        display: flex;
+      }
+      #info > div {
+        font-size: larger;
+      }
+    </style> -->
+    <link rel="stylesheet" href="checkBlock.css" />
+    <script src="checkBlock.js"></script>
+  </head>
+  <body>
+    <div id="info">
+      <div class="name">Name <input type="text" id="player_name" /></div>
+      <div class="timer">Timer <input type="time" name="timer" /></div>
+    </div>
+    <div id="container"></div>
+    <button onclick="randomNumberGenerator()">Generate Random Number</button>
+
+    <!-- <script>
+      function randomNumberGenerator() {
+        const randomNumbers = [];
+        while (randomNumbers.length < 25) {
+          const number = Math.floor(Math.random() * 25) + 1;
+          if (!randomNumbers.includes(number)) {
+            randomNumbers.push(number);
+          }
+        }
+
+        const createDiv = document.getElementById("container");
+        createDiv.innerHTML = "";
+        for (let number of randomNumbers) {
+          const gridItem = document.createElement("div");
+          gridItem.classList.add("grid-item");
+          gridItem.textContent = number;
+          createDiv.appendChild(gridItem);
+        }
+      }
+    </script> -->
+  </body>
+</html>
