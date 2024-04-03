@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Difference Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      input[type="date"] {
+        padding: 5px;
+        font-size: 16px;
+      }
+      button {
+        padding: 8px 16px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #result {
+        margin-top: 10px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Date Difference Calculator</h2>
+
+    <label for="date1">Date 1:</label>
+    <input type="date" id="date1" />
+
+    <label for="date2">Date 2:</label>
+    <input type="date" id="date2" />
+
+    <button onclick="calculateDifference()">Calculate Difference</button>
+
+    <div id="result"></div>
+
+    <script>
+      function calculateDifference() {
+        var date1 = new Date(document.getElementById("date1").value);
+        var date2 = new Date(document.getElementById("date2").value);
+
+        var millisecondsInDay = 1000 * 60 * 60 * 24;
+
+        var difference = Math.abs(date2 - date1);
+        var differenceInDays = Math.round(difference / millisecondsInDay);
+
+        document.getElementById("result").innerText =
+          "Difference: " + differenceInDays + " days";
+      }
+    </script>
+  </body>
+</html>

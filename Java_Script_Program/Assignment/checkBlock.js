@@ -16,3 +16,7 @@ function randomNumberGenerator() {
     createDiv.appendChild(gridItem);
   }
 }
+
+function selectBlock() {
+  const number = document.getElementById("select").value;
+}
