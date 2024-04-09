@@ -1,0 +1,7 @@
+<context>
+<Resource name="jdbc/web_student_tracker" auth="Container" 
+maxActive="20" maxIdle="5" maxWait="10000"
+username="" password="" 
+
+/>
+</context>
