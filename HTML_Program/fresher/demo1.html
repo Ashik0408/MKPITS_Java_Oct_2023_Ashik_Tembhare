@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+	<title>HTML Geolocation API</title>
+	
+	<style>
+		#container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#drop {
+			height: 105px;
+			width: 105px;
+			border: 2px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<h1>Hey Geek,</h1>
+		<h3>Welcome to GeeksforGeeks!</h3>
+		
+
+<p>Drag image into the container</p>
+
+
+		<div id="drop" ondrop="dropItem(event)"
+			ondragover="droppable(event)"></div>
+
+		<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20220428080551/gfglogo-200x200.png"
+			alt="GeeksforGeeks" id="image"
+			draggable="true" ondragstart="dragItem(event)"
+			height="100px" width="100px">
+	</div>
+
+	<script>
+		function droppable(e) {
+			e.preventDefault();
+		}
+
+		function dragItem(e) {
+			e.dataTransfer.setData("text", e.target.id);
+		}
+
+		function dropItem(e) {
+			e.preventDefault();
+			var content = e.dataTransfer.getData("text");
+			e.target.appendChild(document.getElementById(content));
+		}
+	</script>
+</body>
+
+</html>
