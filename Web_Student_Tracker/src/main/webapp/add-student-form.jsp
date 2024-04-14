@@ -5,6 +5,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link type="text/css" rel="stylesheet" href="css/style.css"> 
+<link type="text/css" rel="stylesheet" href="css/add-student-style.css"> 
 </head>
 <body>
 <div id="wrapper">

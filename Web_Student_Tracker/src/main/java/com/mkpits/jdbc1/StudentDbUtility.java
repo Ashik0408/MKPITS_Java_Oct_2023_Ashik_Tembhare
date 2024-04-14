@@ -29,7 +29,7 @@ public class StudentDbUtility {
 			myConn = dataSource.getConnection();
 
 			// create a sql statement
-			String sql = "select * from student order by last_name";
+			String sql = "select * from student order by id";
 			myStmt = myConn.createStatement();
 
 			// execute sql query
@@ -104,4 +104,57 @@ public class StudentDbUtility {
 		}
 
 	}
+
+	public Student_Model loadStudent(String theStudentId) {
+		Student_Model theStudent = null;
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		ResultSet myRs = null;
+		int studentId;
+
+		try {
+			// convert student id into integer
+			studentId = Integer.parseInt(theStudentId);
+
+			// get database connection
+			myConn = dataSource.getConnection();
+
+			// create sql to get selected student
+			String sql = "select * from student where id = ?";
+
+			// create a prepared statement
+			myStmt = myConn.prepareStatement(sql);
+
+			// set params
+			myStmt.setInt(1, studentId);
+
+			// execute statement
+			myRs = myStmt.executeQuery();
+
+			// retrive data from result set row
+			if (myRs.next()) {
+				String firstName = myRs.getString("first_name");
+				String lastName = myRs.getString("last_name");
+				String email = myRs.getString("email");
+
+				// use the studentid during constrction
+				theStudent = new Student_Model(studentId, firstName, lastName, email);
+			} else {
+				throw new Exception("Could not find studentid " + studentId);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(myConn, myStmt, myRs);
+		}
+
+		return theStudent;
+	}
+
+	public Student_Model loadStudents(String theStudentId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 }

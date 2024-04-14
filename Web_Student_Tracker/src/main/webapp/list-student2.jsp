@@ -29,14 +29,19 @@ List<Student_Model> theStudents = (List<Student_Model>) request.getAttribute("ST
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Email</th>
+					<th>Action</th>
 				</tr>
 				<c:forEach var="tempStudent" items="${STUDENT_LIST}">
+				<%-- <!-- set up link for each student -->
+				<c:url var="tempLink" value="StudentControllerServletNew">
+				<c:param name="command" value="LOAD"/>
+				<C:param name="studentId" value="${tempStudent.id}"/></c:url> --%>
 				<tr>
 				<td>${tempStudent.id}</td>
 				<td>${tempStudent.firstName}</td>
 				<td>${tempStudent.lastName}</td>
 				<td>${tempStudent.email}</td>
-								
+				<td><a href="${tempLink}">Update</a></td>			
 				</tr>
 				</c:forEach>
 			</table>
