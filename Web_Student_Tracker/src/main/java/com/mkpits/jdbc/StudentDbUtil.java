@@ -8,87 +8,71 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import com.mysql.cj.x.protobuf.MysqlxConnection.Close;
+public class StudentDbUtil {
 
-public class StudentDbUtil 
-{
 	private DataSource dataSource;
 
 	public StudentDbUtil(DataSource dataSource) {
+
 		this.dataSource = dataSource;
 	}
-	
-	public List<Student> getStudents() throws Exception
-	{
-		List<Student> students=new ArrayList<>();
-		
-		Connection myConn=null;
-		Statement myStmt=null;
-		ResultSet myRs=null;
-		
-		try 
-		{
-			myConn=dataSource.getConnection();
-			
-			// create a sql statement 
-			String sql="select * from student order by last_name";
-			myStmt=myConn.createStatement();
-			
+
+	public List<Student> getStudents() throws Exception {
+		List<Student> students = new ArrayList<>();
+
+		Connection myConn = null;
+		Statement myStmt = null;
+		ResultSet myRs = null;
+
+		try {
+			myConn = dataSource.getConnection();
+
+			// create a sql statement
+			String sql = "select * from student order by last_name";
+			myStmt = myConn.createStatement();
+
 			// execute sql query
-			myRs=myStmt.executeQuery(sql);
-			
-			while (myRs.next()) 
-			{
-				int id=myRs.getInt("id");
-				String firstName=myRs.getString("first_name");
-				String lastName=myRs.getString("last_name");
-				String email=myRs.getString("email");
-			
-			// create new student object
-			Student tempStudent=new Student(id, firstName, lastName, email);
-			
-			// add it into list of student
-			students.add(tempStudent);
+			myRs = myStmt.executeQuery(sql);
+
+			// process the result set
+			while (myRs.next()) {
+
+				// retrive data from result set
+				int id = myRs.getInt("id");
+				String firstName = myRs.getString("first_name");
+				String lastName = myRs.getString("last_name");
+				String email = myRs.getString("email");
+
+				// create new Student Object
+				Student tempStudent = new Student(id, firstName, lastName, email);
+
+				// add it to the list of student
+				students.add(tempStudent);
 			}
-		}
-		catch (Exception e) 
-		{
+
+		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			close(myConn, myStmt, myRs);
 		}
-		finally 
-		{
-			close(myConn,myStmt,myRs);
-		}
-		
-		// return students 
 		return students;
-		
 	}
 
 	private void close(Connection myConn, Statement myStmt, ResultSet myRs) {
-		try 
-		{
-			if (myRs!=null) 
-			{
+
+		try {
+			if (myRs != null) {
 				myRs.close();
 			}
-			if (myStmt!=null) 
-			{
+			if (myStmt != null) {
 				myStmt.close();
 			}
-			if (myConn!=null) 
-			{
+			if (myConn != null) {
 				myConn.close();
 			}
-			
-			
-		} 
-		catch (Exception e) 
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
-	
 }

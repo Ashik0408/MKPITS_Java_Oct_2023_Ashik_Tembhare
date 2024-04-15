@@ -18,53 +18,49 @@ import javax.sql.DataSource;
  * Servlet implementation class TestServlet
  */
 @WebServlet("/TestServlet")
-public class TestServlet extends HttpServlet 
-{
+public class TestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	
-	//Define datasource/conection pool for Resource Injection 
-	@Resource(name ="jdbc/web_student_tracker")
+	// Define datasource/connection pool for Resource Injection
+	@Resource(name = "jdbc/web_student_tracker")
 	private DataSource dataSource;
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{
-		// set the print writer
-		PrintWriter out=response.getWriter();
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// set up the PrintWriter
+		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
-		
+
 		// get connection to the database
-		
-		Connection myConn=null;
-		Statement myStmt=null;
-		ResultSet myRs=null;
-		
-		try 
-		{
-			myConn=dataSource.getConnection();
-			
-			// create a sql statement 
-			String sql="select * from student";
-			myStmt=myConn.createStatement();
-			
+		Connection myConn = null;
+		Statement myStmt = null;
+		ResultSet myRs = null;
+
+		try {
+			myConn = dataSource.getConnection();
+
+			// create a sql statement
+			String sql = "select * from student";
+			myStmt = myConn.createStatement();
+
 			// execute sql query
-			myRs=myStmt.executeQuery(sql);
-			
-			// process the reselt set
+			myRs = myStmt.executeQuery(sql);
+
+			// process the result set
 			while (myRs.next()) {
-				String email=myRs.getString("email");
-				out.println("Email : "+email);
-				out.println("<br>");
-				
+				String email = myRs.getString("first_name");
+				out.println(email + "\n");
 			}
-			
-		} 
-		catch (Exception e) 
-		{
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 	}
 
 }

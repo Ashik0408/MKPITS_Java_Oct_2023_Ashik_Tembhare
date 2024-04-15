@@ -23,7 +23,7 @@ List<Student_Model> theStudents = (List<Student_Model>) request.getAttribute("ST
 
 	<div id="container">
 		<div id="content">
-		<input type="button" value="Add Student" onclick="window.location.href='add-student-form.jsp';return false;" class="add-student-button" >
+		<input type="button" value="Add Student" onclick="window.location.href='addd-student-form.jsp'; return false;" class="add-student-button" />
 			<table>
 				<tr>
 					<th>Id</th>
@@ -38,12 +38,20 @@ List<Student_Model> theStudents = (List<Student_Model>) request.getAttribute("ST
 				<c:param name="command" value="LOAD"/>
 				<c:param name="studentId" value="${tempStudent.id}"/>
 				</c:url>
+				<!-- Set up a link to delete student -->
+				<c:url var="deleteLink" value="StudentControllerServletNew">
+				<c:param name="command" value="DELETE"/>
+				<c:param name="studentId" value="${tempStudent.id}"/>
+				</c:url>
 				<tr>
 				<td>${tempStudent.id}</td>
 				<td>${tempStudent.firstName}</td>
 				<td>${tempStudent.lastName}</td>
 				<td>${tempStudent.email}</td>
 				<td><a href="${tempLink}">Update</a>
+					<a href="${deleteLink}" onclick="if(!(confirm('Are you sure you want to delete this student ?'))) return false">Delete</a>
+				</td>
+								
 				</tr>
 				</c:forEach>
 			</table>

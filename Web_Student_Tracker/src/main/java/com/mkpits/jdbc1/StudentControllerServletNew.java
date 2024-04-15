@@ -63,9 +63,14 @@ public class StudentControllerServletNew extends HttpServlet {
 			case "ADD":
 				addStudent(request, response);
 				break;
-			
 			case "LOAD":
 				loadStudent(request, response);
+				break;
+			case "UPDATE":
+				updateStudent(request, response);
+				break;
+			case "DELETE":
+				deleteStudent(request, response);
 				break;
 			default:
 				listStudents(request, response);
@@ -77,20 +82,55 @@ public class StudentControllerServletNew extends HttpServlet {
 		}
 	}
 
-	private void loadStudent(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void deleteStudent(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// read student id from form data
-				String theStudentId = request.getParameter("studentId");
+		String studentId = request.getParameter("studentId");
 
-				// get student from database (dbutility)
-				Student_Model theStudent = studentDbUtil.loadStudents(theStudentId);
+		// delete student from database
+		studentDbUtil.deleteStudent(studentId);
 
-				// place student in the request attribute
-				request.setAttribute("THE_STUDENT", theStudent);
+		// send back to again "list-student.jsp"
+		listStudents(request, response);
 
-				// send to JSP page view
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/update-list-student-form.jsp");
-				dispatcher.forward(request, response);
-		
+	}
+
+	private void updateStudent(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		// read student id from form data
+		String studentId = request.getParameter("studentId");
+		int id = Integer.parseInt(studentId);
+
+		// read student data from form
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String email = request.getParameter("email");
+
+		// create a new student object
+		Student_Model theStudent = new Student_Model(id, firstName, lastName, email);
+
+		// perform update on deatabase
+		studentDbUtil.updatStudent(theStudent);
+
+		// send them back to the list "list-students" page
+		listStudents(request, response);
+
+	}
+
+	private void loadStudent(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// read student id from form data
+		String theStudentId = request.getParameter("studentId");
+
+		// get student from database (dbutility)
+		Student_Model theStudent = studentDbUtil.loadStudents(theStudentId);
+
+		// place student in the request attribute
+		request.setAttribute("THE_STUDENT", theStudent);
+
+		// send to JSP page view
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/update-list-student-form.jsp");
+		dispatcher.forward(request, response);
+
 	}
 
 	private void addStudent(HttpServletRequest request, HttpServletResponse response) throws Exception {

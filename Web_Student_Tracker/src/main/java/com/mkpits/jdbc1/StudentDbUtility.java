@@ -3,6 +3,7 @@ package com.mkpits.jdbc1;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -105,7 +106,8 @@ public class StudentDbUtility {
 
 	}
 
-	public Student_Model loadStudent(String theStudentId) {
+	public Student_Model loadStudents(String theStudentId) {
+
 		Student_Model theStudent = null;
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
@@ -151,10 +153,62 @@ public class StudentDbUtility {
 		return theStudent;
 	}
 
-	public Student_Model loadStudents(String theStudentId) {
-		// TODO Auto-generated method stub
-		return null;
+	public void updatStudent(Student_Model theStudent) throws SQLException {
+
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		try {
+
+			// get db connection
+
+			myConn = dataSource.getConnection();
+
+			// create sql to get update student
+			String sql = "update student set first_name = ?,last_name = ?,email = ? where id = ?";
+
+			// create a prepared statement
+			myStmt = myConn.prepareStatement(sql);
+
+			// set params
+			myStmt.setString(1, theStudent.getFirstName());
+			myStmt.setString(2, theStudent.getLastName());
+			myStmt.setString(3, theStudent.getEmail());
+			myStmt.setInt(4, theStudent.getId());
+
+			// execute SQL statement
+			myStmt.execute();
+
+		} finally {
+			close(myConn, myStmt, null);
+		}
+
 	}
 
-	
+	public void deleteStudent(String studentId) throws SQLException {
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		try {
+			// convert student to integer
+			int theStudentId = Integer.parseInt(studentId);
+
+			// get db connection
+
+			myConn = dataSource.getConnection();
+
+			// create sql to get update student
+			String sql = "delete from student where id = ?";
+
+			// create a prepared statement
+			myStmt = myConn.prepareStatement(sql);
+
+			// set params
+			myStmt.setInt(1, theStudentId);
+
+			// execute sql
+			myStmt.execute();
+		} finally {
+			close(myConn, myStmt, null);
+		}
+
+	}
 }
