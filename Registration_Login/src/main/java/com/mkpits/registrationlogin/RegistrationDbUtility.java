@@ -19,7 +19,7 @@ public class RegistrationDbUtility {
 		try 
 		{
 			myConn = dataSource.getConnection();
-			String sql="insert into registration (name,username,mob_no,email,city,gender,password) values(?,?,?,?,?,?,?)";
+			String sql="insert into login_register (name,username,mob_no,email,city,gender,password) values(?,?,?,?,?,?,?)";
 			myStmt=myConn.prepareStatement(sql);
 			
 			myStmt.setString(1,registration.getName());
@@ -35,11 +35,11 @@ public class RegistrationDbUtility {
 		catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			close(myConn, myStmt, null);
+			close(myConn, myStmt);
 		}
 	}
 
-	private void close(Connection myConn, PreparedStatement myStmt, Object object) {
+	private void close(Connection myConn, PreparedStatement myStmt) {
 		try {
 			if (myStmt != null) {
 				myStmt.close();

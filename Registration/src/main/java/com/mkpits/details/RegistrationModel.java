@@ -1,36 +1,35 @@
-package com.mkpits.registrationlogin;
+package com.mkpits.details;
 
-public class Registration {
-	
+public class RegistrationModel 
+{
 	private int id;
 	private String name;
 	private String username;
-	private long mob_no;
-	private String email;
+	private String email ;
+	private String mob;
 	private String city;
-	private String gender;
 	private String password;
-	public Registration(String name, String username, long mob_no, String email, String city, String gender,
-			String password) {
+	
+	public RegistrationModel(String name, String username, String email, String mob, String city, String password) {
 		super();
 		this.name = name;
 		this.username = username;
-		this.mob_no = mob_no;
 		this.email = email;
+		this.mob = mob;
 		this.city = city;
-		this.gender = gender;
 		this.password = password;
 	}
-	public Registration(int id, String name, String username, long mob_no, String email, String city, String gender,
+	
+	
+	public RegistrationModel(int id, String name, String username, String email, String mob, String city,
 			String password) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.username = username;
-		this.mob_no = mob_no;
 		this.email = email;
+		this.mob = mob;
 		this.city = city;
-		this.gender = gender;
 		this.password = password;
 	}
 	public int getId() {
@@ -42,17 +41,14 @@ public class Registration {
 	public String getUsername() {
 		return username;
 	}
-	public long getMob_no() {
-		return mob_no;
-	}
 	public String getEmail() {
 		return email;
 	}
+	public String getMob() {
+		return mob;
+	}
 	public String getCity() {
 		return city;
-	}
-	public String getGender() {
-		return gender;
 	}
 	public String getPassword() {
 		return password;
@@ -66,29 +62,36 @@ public class Registration {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public void setMob_no(long mob_no) {
-		this.mob_no = mob_no;
-	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public void setMob(String mob) {
+		this.mob = mob;
 	}
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+
 	@Override
 	public String toString() {
-		return "Registration [name=" + name + ", username=" + username + ", mob_no=" + mob_no + ", email=" + email
-				+ ", city=" + city + ", gender=" + gender + ", password=" + password + "]";
+		return "RegistrationModel [id=" + id + ", name=" + name + ", username=" + username + ", email=" + email
+				+ ", mob=" + mob + ", city=" + city + ", password=" + password + "]";
 	}
-	
-	
-	
+
+
 	
 
+
+	
+	
+	
+	
+	
+	
+	
+	
 }
